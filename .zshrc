@@ -7,6 +7,9 @@ _setup_omz() {
 	# Current Theme
 	ZSH_THEME="bureau"
 
+    # load zsh plugins
+    plugins=(aliases git fnm)
+
 	# Run the Oh my zsh
 	source $ZSH/oh-my-zsh.sh
 }
@@ -18,12 +21,23 @@ _setup_alias() {
 	alias vi=nvim
 }
 
+_setup_post_config() {
+    # Fix for brew not found, more info: (https://apple.stackexchange.com/questions/148901/why-does-my-brew-installation-not-work)
+    eval $(/opt/homebrew/bin/brew shellenv)
+
+    # Setting up fnm 
+    eval "$(fnm env --use-on-cd)"
+}
+
 _setup_config() {
 	# Setup OMZ
 	_setup_omz
 
 	# Setup all the alias
 	_setup_alias
+
+    # Setup post config stuff
+    _setup_post_config
 }
 
 _setup_config 
