@@ -7,8 +7,8 @@ _setup_omz() {
 	# Current Theme
 	ZSH_THEME="bureau"
 
-    # load zsh plugins
-    plugins=(aliases git fnm)
+	# load zsh plugins
+	plugins=(aliases git fnm)
 
 	# Run the Oh my zsh
 	source $ZSH/oh-my-zsh.sh
@@ -17,8 +17,14 @@ _setup_omz() {
 _setup_alias() {
 	# Change cat for batcat which is better
 	alias cat=bat
+    alias nv=nvim
 	alias vim=nvim
 	alias vi=nvim
+}
+
+_setup_env() {
+	# undodir for vim/nvim
+	UNDODIR_PATH="${HOME}/.config/nvim/undodir"
 }
 
 _setup_post_config() {
@@ -36,8 +42,11 @@ _setup_config() {
 	# Setup all the alias
 	_setup_alias
 
-    # Setup post config stuff
-    _setup_post_config
+	# Setup Environment variables
+	_setup_env
+
+	# Setup post config stuff
+    	_setup_post_config
 }
 
 _setup_config 
