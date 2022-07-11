@@ -21,7 +21,7 @@ local commands_table = {
     ['Tlws'] = 'lsp_workspace_symbols',
     ['Tlca'] = 'lsp_code_actions',
     ['Tltd'] = 'lsp_type_definitions',
-    ['Tld'] = 'diagnostics',
+    -- ['Tld'] = 'diagnostics',
     ['Tli'] = 'lsp_implementations',
     ['Tld'] = 'lsp_definitions',
 
