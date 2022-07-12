@@ -1,91 +1,91 @@
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim' -- plugin management
 
     -- apperative plugins
-    use 'hrsh7th/vim-vsnip'
-    use 'glepnir/dashboard-nvim'
-    use 'marko-cerovac/material.nvim'
+    use 'hrsh7th/vim-vsnip' -- VSCode(LSP)'s snippet feature
+    use 'glepnir/dashboard-nvim' -- Fancy Start Screen
+    use 'marko-cerovac/material.nvim' -- Material colorscheme
   
     -- functional plugins
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/nvim-cmp'
-    use 'williamboman/nvim-lsp-installer'
-    use 'mfussenegger/nvim-jdtls'
-    use 'onsails/lspkind-nvim'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-treesitter/nvim-treesitter-refactor'
-    use 'akinsho/nvim-toggleterm.lua'
-    use 'windwp/nvim-autopairs'
-    use 'windwp/nvim-ts-autotag'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-    use 'kdheepak/lazygit.nvim'
-    use 'terrortylor/nvim-comment'
-    use 'rafamadriz/friendly-snippets'
-    use 'Pocco81/AutoSave.nvim'
-    use {'turbio/bracey.vim', run = 'cd app & npm install --prefix server'}
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
-    use 'sbdchd/neoformat'
+    use 'neovim/nvim-lspconfig' -- Configs for the Nvim LSP client
+    use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in language server client.
+    use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words.
+    use 'hrsh7th/cmp-path' -- nvim-cmp source for filesystem paths.
+    use 'hrsh7th/nvim-cmp' -- completion engine
+    use 'williamboman/nvim-lsp-installer' -- manage LSP servers
+    use 'mfussenegger/nvim-jdtls' -- Extensions for the built-in LSP for eclipse.jdt.ls.
+    use 'onsails/lspkind-nvim' -- This tiny plugin adds vscode-like pictograms
+    use 'nvim-treesitter/nvim-treesitter' -- better hightlighting syntax
+    use 'nvim-treesitter/nvim-treesitter-refactor' -- Refactor modules for nvim-treesitter
+    use 'akinsho/nvim-toggleterm.lua' -- persist and toggle multiple terminals
+    use 'windwp/nvim-autopairs' -- autocomplete and pair multiple chars
+    use 'windwp/nvim-ts-autotag' -- close html tag
+    use 'norcalli/nvim-colorizer.lua' -- A high-performance color highlighter
+    use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim' --  toggling the LSP diagnostics
+    use 'kdheepak/lazygit.nvim' -- use lazygit in neovim
+    use 'terrortylor/nvim-comment' -- Toggle comments in Neovim
+    use 'rafamadriz/friendly-snippets' -- Snippets collection for a set of different
+    use 'Pocco81/AutoSave.nvim' -- saving your work before the world collapses or you type :qa!
+    use {'turbio/bracey.vim', run = 'cd app & npm install --prefix server'} -- plugin for live html, css, and javascript editing in vim
+    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'} -- Preview markdown on your modern browser
+    use 'sbdchd/neoformat' -- for formatting code.
     use {
-        "ur4ltz/surround.nvim",
+        'ur4ltz/surround.nvim', -- Provides key mapping to add surrounding characters
         config = function()
-            require"surround".setup {mappings_style = "surround"}
+            require'surround'.setup {mappings_style = 'surround'}
         end
     }
   
     use {
-        'lewis6991/gitsigns.nvim',
+        'lewis6991/gitsigns.nvim', -- git decorations
         requires = {
-            'nvim-lua/plenary.nvim'
+            'nvim-lua/plenary.nvim' -- utility All the lua functions I don't want to write twice.
         }
     }
   
     use {
-        'phaazon/hop.nvim',
+        'phaazon/hop.nvim', -- allowing you to jump anywhere in a document with as few keystrokes 
         as = 'hop'
     }
   
     use {
-        'akinsho/nvim-bufferline.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
+        'akinsho/nvim-bufferline.lua', -- buffer line (with tabpage integration)
+        requires = 'kyazdani42/nvim-web-devicons' -- icons!
     }
   
     use {
-        'p00f/cphelper.nvim',
+        'p00f/cphelper.nvim', -- automating tasks in competitive programming like downloading test cases, compiling and testing.
         requires = {
-            'nvim-lua/plenary.nvim',
-            'ygm2/rooter.nvim',
+            'nvim-lua/plenary.nvim', -- utility All the lua functions I don't want to write twice.
+            'ygm2/rooter.nvim', -- changes current working directory to project root of the file opened in current buffer
             opt = true
         }
     }
   
     use {
-        'hoob3rt/lualine.nvim',
+        'hoob3rt/lualine.nvim', --  statusline plugin
         requires = {
-            'kyazdani42/nvim-web-devicons',
+            'kyazdani42/nvim-web-devicons', -- icons!
             opt = true
         }
     }
   
     use {
-        'nvim-telescope/telescope.nvim',
+        'nvim-telescope/telescope.nvim', -- fuzzy finder over list
         requires = {
-            'nvim-lua/popup.nvim', 
-            'nvim-lua/plenary.nvim' 
+            'nvim-lua/popup.nvim', -- An implementation of the Popup API from vim in Neovim.
+            'nvim-lua/plenary.nvim' -- utility All the lua functions I don't want to write twice.
         }
     }
 
     use {
-        'nvim-telescope/telescope-fzf-native.nvim', 
+        'nvim-telescope/telescope-fzf-native.nvim', -- fzf-native is a c port of fzf
         run = 'make' 
     }
 
     use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
+        'kyazdani42/nvim-tree.lua', -- File Explorer
+        requires = 'kyazdani42/nvim-web-devicons', -- icons!
     }
 
     use_rocks {'lunajson'}
