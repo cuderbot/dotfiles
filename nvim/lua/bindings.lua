@@ -1,7 +1,7 @@
-keymap = vim.keymap.set
+local keymap = vim.keymap.set
 
 -- Telescope bindings
-function _find_files()
+local function _find_files()
     local is_git = os.execute("git status &>/dev/null")
     if (is_git == 0) then
         vim.cmd(":Telescope git_files")
