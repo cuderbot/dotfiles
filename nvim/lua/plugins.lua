@@ -62,8 +62,6 @@ return require('packer').startup(function(use)
     use 'hrsh7th/vim-vsnip' -- VSCode(LSP)'s snippet feature
     use 'rafamadriz/friendly-snippets' -- Snippets collection for a set of different
     use 'Pocco81/AutoSave.nvim' -- saving your work before the world collapses or you type :qa!
-    use {'turbio/bracey.vim', run = 'cd app & npm install --prefix server'} -- plugin for live html, css, and javascript editing in vim
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'} -- Preview markdown on your modern browser
     use 'sbdchd/neoformat' -- for formatting code.
     use {
         'ur4ltz/surround.nvim', -- Provides key mapping to add surrounding characters

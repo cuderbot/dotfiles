@@ -38,8 +38,6 @@ if someday i went full neovim, this config will be 100% useful, but for now this
 - [hrsh7th/vim-vsnip - VSCode(LSP)'s snippet feature](https://github.com/hrsh7th/vim-vsnip)
 - [rafamadriz/friendly-snippets - Snippets collection for a set of languages](https://github.com/rafamadriz/friendly-snippets)
 - [Pocco81/AutoSave.nvim - automatically saving your work whenever you make changes to it](https://github.com/Pocco81/AutoSave.nvim)
-- [turbio/bracey.vim - live html, css, and javascript editing](https://github.com/turbio/bracey.vim)
-- [iamcco/markdown-preview.nvim - Preview markdown on your modern browser](https://github.com/iamcco/markdown-preview.nvim)
 - [sbdchd/neoformat - for formatting code.](https://github.com/sbdchd/neoformat)
 - [ur4ltz/surround.nvim - Provides key mapping to add surrounding characters](https://github.com/ur4ltz/surround.nvim)
 - [terrortylor/nvim-comment - comment lines](terrortylor/nvim-comment)
