@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/vim-vsnip' -- VSCode(LSP)'s snippet feature
     use 'glepnir/dashboard-nvim' -- Fancy Start Screen
     use 'marko-cerovac/material.nvim' -- Material colorscheme
-  
+
     -- functional plugins
     use 'neovim/nvim-lspconfig' -- Configs for the Nvim LSP client
     use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in language server client.
@@ -35,33 +35,25 @@ return require('packer').startup(function(use)
             require'surround'.setup {mappings_style = 'surround'}
         end
     }
-  
+
     use {
         'lewis6991/gitsigns.nvim', -- git decorations
         requires = {
             'nvim-lua/plenary.nvim' -- utility All the lua functions I don't want to write twice.
         }
     }
-  
+
     use {
         'phaazon/hop.nvim', -- allowing you to jump anywhere in a document with as few keystrokes 
         as = 'hop'
     }
-  
+
     use {
         'akinsho/nvim-bufferline.lua', -- buffer line (with tabpage integration)
         requires = 'kyazdani42/nvim-web-devicons' -- icons!
     }
-  
-    use {
-        'p00f/cphelper.nvim', -- automating tasks in competitive programming like downloading test cases, compiling and testing.
-        requires = {
-            'nvim-lua/plenary.nvim', -- utility All the lua functions I don't want to write twice.
-            'ygm2/rooter.nvim', -- changes current working directory to project root of the file opened in current buffer
-            opt = true
-        }
-    }
-  
+
+
     use {
         'hoob3rt/lualine.nvim', --  statusline plugin
         requires = {
@@ -69,7 +61,7 @@ return require('packer').startup(function(use)
             opt = true
         }
     }
-  
+
     use {
         'nvim-telescope/telescope.nvim', -- fuzzy finder over list
         requires = {
