@@ -10,6 +10,9 @@ local function _find_files()
     end
 end
 
+-- Setup leader key
+vim.g.mapleader = ","
+
 keymap('n', '<Leader>f', _find_files)
 keymap('n', '<Leader>o', '<cmd> Telescope oldfiles <cr>')
 keymap('n', '<Leader>s', '<cmd> Telescope live_grep <cr>')
@@ -50,17 +53,17 @@ end
 keymap('n', '<F5>', '<cmd> Run <cr>')
 
 -- Other bindings nvimtree, markdown preview, Neoformat, Colorizer, LazyGit
-keymap('n', '<F7>',            '<cmd> NvimTreeToggle <cr>')
-keymap('n', '<leader>md',      '<cmd> MarkdownPreviewToggle <cr>')
-keymap('n', '<Leader>p',       '<cmd> Neoformat <cr>')
-keymap('n', '<Leader>cc',      '<cmd> ColorizerToggle <cr>')
-keymap('n', '<Leader>gg',      '<cmd> LazyGit <cr>')
-keymap('n', '<Leader>n',       '<cmd> enew <cr>')
-keymap('n', '<Leader><Space>', '<cmd> noh <cr>')
-keymap('n', '[[',       '<cmd> vertical resize +7 <cr>')
-keymap('n', ']]',       '<cmd> vertical resize -7 <cr>')
-keymap('n', '+',               '<cmd> resize +1 <cr>')
-keymap('n', '-',               '<cmd> resize -1 <cr>')
+keymap('n', '<leader>b',        '<cmd> NvimTreeToggle <cr>')
+keymap('n', '<leader>md',       '<cmd> MarkdownPreviewToggle <cr>')
+keymap('n', '<Leader>p',        '<cmd> Neoformat <cr>')
+keymap('n', '<Leader>cc',       '<cmd> ColorizerToggle <cr>')
+keymap('n', '<Leader>gg',       '<cmd> LazyGit <cr>')
+keymap('n', '<Leader>n',        '<cmd> enew <cr>')
+keymap('n', '<Leader><Space>',  '<cmd> noh <cr>')
+keymap('n', '[[',               '<cmd> vertical resize +7 <cr>')
+keymap('n', ']]',               '<cmd> vertical resize -7 <cr>')
+keymap('n', '+',                '<cmd> resize +1 <cr>')
+keymap('n', '-',                '<cmd> resize -1 <cr>')
 
 -- LSP bindings
 keymap('n', 'gD',        '<cmd> lua vim.lsp.buf.declaration() <cr>')
