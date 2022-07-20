@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path' -- nvim-cmp source for filesystem paths.
     use 'hrsh7th/nvim-cmp' -- completion engine
     use 'williamboman/nvim-lsp-installer' -- manage LSP servers
-    use 'mfussenegger/nvim-jdtls' -- Extensions for the built-in LSP for eclipse.jdt.ls.
     use 'onsails/lspkind-nvim' -- This tiny plugin adds vscode-like pictograms
     use 'nvim-treesitter/nvim-treesitter' -- better hightlighting syntax
     use 'nvim-treesitter/nvim-treesitter-refactor' -- Refactor modules for nvim-treesitter
