@@ -44,6 +44,7 @@ if someday i went full neovim, this config will be 100% useful, but for now this
 - [ur4ltz/surround.nvim - Provides key mapping to add surrounding characters](https://github.com/ur4ltz/surround.nvim)
 - [terrortylor/nvim-comment - comment lines](terrortylor/nvim-comment)
 - [kdheepak/lazygit.nvim - call lazygit](https://github.com/kdheepak/lazygit.nvim)
+- [akinsho/nvim-toggleterm.lua - persist and toggle multiple terminals](https://github.com/akinsho/toggleterm.nvim)
 
 ## TODO
 
