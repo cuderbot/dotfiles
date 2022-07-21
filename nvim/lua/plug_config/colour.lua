@@ -20,6 +20,6 @@ require('material').setup({
 		eob_lines = false 
 	}
 })
-vim.cmd 'colorscheme material'
 
+vim.cmd 'colorscheme material'
 vim.cmd("highlight WinSeparator guifg=#c0bfbc")

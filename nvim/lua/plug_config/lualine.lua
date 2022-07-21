@@ -1,4 +1,4 @@
-require'lualine'.setup {
+require'lualine'.setup({
   options = {
     icons_enabled = true,
     theme = 'material-nvim',
@@ -20,4 +20,4 @@ require'lualine'.setup {
       },
     lualine_z = {'location'}
   },
-}
+})

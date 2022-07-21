@@ -1,4 +1,4 @@
-require'nvim-tree'.setup {
+require'nvim-tree'.setup({
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
@@ -29,7 +29,6 @@ require'nvim-tree'.setup {
     cmd  = nil,
     args = {}
   },
-
   view = {
     width = 30,
     height = 30,
@@ -39,4 +38,4 @@ require'nvim-tree'.setup {
       list = {}
     }
   }
-}
+})

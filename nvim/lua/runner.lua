@@ -23,7 +23,7 @@ local extra = 'printf \"\\\\n\\\\033[0;33mPlease Press ENTER to continue \\\\033
 
 
 -- To run file run :Run or just press <F5>
-function run_code()
+local function run_code()
     if (run_command_table[vim.bo.filetype]) then
        vim.cmd("2TermExec cmd='".. run_command_table[vim.bo.filetype].."; " .. extra .. "' direction=float")
    else
@@ -32,7 +32,7 @@ function run_code()
 end
 
 -- To run file run :Debug
-function debug_code()
+local function debug_code()
     if (debug_command_table[vim.bo.filetype]) then
        vim.cmd("2TermExec cmd='".. debug_command_table[vim.bo.filetype].."; " .. extra .. "' direction=float")
    else
@@ -40,7 +40,7 @@ function debug_code()
    end
 end
 
-local function strsplit (inputstr)
+local function strsplit(inputstr)
     local t={}
     for str in string.gmatch(inputstr, "([^\",\"]+)") do
         table.insert(t, str)
@@ -51,7 +51,7 @@ end
 -- Use the following function to update the execution command of a filetype temporarly
 -- Usage :RunUpdate  --OR-- :RunUpdate filetype
 -- If no argument is provided, the command is going to take the filetype of active buffer
-function update_command_table(type, filetype)
+local function update_command_table(type, filetype)
     local command
 
     if(filetype == "")then
@@ -61,7 +61,7 @@ function update_command_table(type, filetype)
     end
 
     filetype = strsplit(filetype)[1]
-    
+
     if(type == 'run') then
         if(run_command_table[filetype]) then
             command = vim.fn.input(string.format("Update run command of filetype (%s): ", filetype),

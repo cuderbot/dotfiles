@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-telescope/telescope-fzf-native.nvim', -- fzf-native is a c port of fzf
-        run = 'make' 
+        run = 'make'
     }
     use {
         'kyazdani42/nvim-tree.lua', -- File Explorer

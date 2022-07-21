@@ -1,7 +1,6 @@
 -- include treesitter and its config
 require('nvim-treesitter.configs').setup{
-
-  ensure_installed = {'c', 'cpp', 'python', 'lua', 'typescript',
+  ensure_installed = {'python', 'lua', 'typescript',
                       'regex', 'bash', 'cmake', 'css', 'javascript',
                       'html', 'comment', 'java', 'rust', 'go', 'markdown',
                       'make', 'json', 'vim'},
@@ -9,7 +8,6 @@ require('nvim-treesitter.configs').setup{
     enable = true,
     disable = {},
   },
-
   rainbow = {
     enable = false,
     -- disable = { 'jsx', 'cpp' },
@@ -18,11 +16,9 @@ require('nvim-treesitter.configs').setup{
     -- colors = {},
     -- termcolors = {}
   },
-
   autotag = {
     enable = true,
   },
-
   refactor = {
     smart_rename = {
       enable = true,
