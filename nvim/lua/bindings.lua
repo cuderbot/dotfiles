@@ -13,6 +13,7 @@ end
 -- Setup leader key
 vim.g.mapleader = ","
 
+-- Telescope bindings
 keymap('n', '<Leader>f', _find_files)
 keymap('n', '<Leader>o', '<cmd> Telescope oldfiles <cr>')
 keymap('n', '<Leader>s', '<cmd> Telescope live_grep <cr>')
@@ -26,8 +27,8 @@ keymap('n', 'm.',       '<cmd> BufferLineMoveNext <cr>')
 keymap('n', 'm,',       '<cmd> BufferLineMovePrev <cr>')
 
 -- Hope bindings
-keymap('n', ';j', '<cmd> HopWord <cr>')
-keymap('n', ';l', '<cmd> HopLineStart <cr>')
+keymap('n', '<Leader>j', '<cmd> HopWord <cr>')
+keymap('n', '<Leader>l', '<cmd> HopLineStart <cr>')
 
 -- LSP Diagnostics Toggle bindings
 keymap('n', '<Leader>dd', '<cmd> ToggleDiag <cr>')
