@@ -20,7 +20,7 @@ keymap('n', '<Leader>s', '<cmd> Telescope live_grep <cr>')
 
 -- Bufferline bindings
 keymap('n', 'f',        '<cmd> BufferLinePick <cr>')
-keymap('n', 'F',        '<cmd> BufferLinePickClose <cr>')
+keymap('n', '<Leader>w','<cmd> BufferLinePickClose <cr>')
 keymap('n', '<TAB>',    '<cmd> BufferLineCycleNext <cr>')
 keymap('n', '<S-TAB>',  '<cmd> BufferLineCyclePrev <cr>')
 keymap('n', 'm.',       '<cmd> BufferLineMoveNext <cr>')
