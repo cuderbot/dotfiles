@@ -1,4 +1,4 @@
-## my-customs-keybinds
+## my-customs-keybinds @custom
 Open telescope | <Leader>f 
 Select a buffer | f
 Close a buffer | <Leader>W
