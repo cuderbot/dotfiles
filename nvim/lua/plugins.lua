@@ -27,8 +27,6 @@ use 'wbthomason/packer.nvim'
     use 'terrortylor/nvim-comment'
     use 'rafamadriz/friendly-snippets'
     use 'Pocco81/AutoSave.nvim'
-    use {'turbio/bracey.vim', run = 'cd app & npm install --prefix server'}
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
     use 'sbdchd/neoformat'
     use {
         "ur4ltz/surround.nvim",
@@ -53,16 +51,7 @@ use 'wbthomason/packer.nvim'
         'akinsho/nvim-bufferline.lua',
         requires = 'kyazdani42/nvim-web-devicons'
     }
-  
-    use {
-        'p00f/cphelper.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'ygm2/rooter.nvim',
-            opt = true
-        }
-    }
-  
+   
     use {
         'hoob3rt/lualine.nvim',
         requires = {
@@ -88,5 +77,13 @@ use 'wbthomason/packer.nvim'
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
     }
-
-    use_rocks {'lunajson'}end)
+    use {
+        'sudormrfbin/cheatsheet.nvim',
+        requires = {
+            {'nvim-telescope/telescope.nvim'},
+            {'nvim-lua/popup.nvim'},
+            {'nvim-lua/plenary.nvim'},
+        }
+    }
+    use_rocks {'lunajson'}
+end)
