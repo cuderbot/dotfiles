@@ -24,7 +24,7 @@ vim.opt['laststatus'] = 3
 -- Persistent undo
 -- mkdir $HOME/.config/nvim/undodir/
 vim.opt['undofile'] = true
-vim.opt['undodir'] = os.getenv( 'HOME' )..'/.config/nvim/undodir/'
+vim.opt['undodir'] = os.getenv('HOME') .. '/.config/nvim/undodir/'
 vim.opt['undolevels'] = 1000
 vim.opt['undoreload'] = 10000
 

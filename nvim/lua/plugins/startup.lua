@@ -1,12 +1,12 @@
 return require('packer').startup(function(use)
-use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim'
 
     -- apperative plugins
     use 'hrsh7th/vim-vsnip'
-    use 'glepnir/dashboard-nvim'
+    use 'goolord/alpha-nvim'
     use 'marko-cerovac/material.nvim'
     use 'andweeb/presence.nvim'
-  
+
     -- functional plugins
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -31,27 +31,27 @@ use 'wbthomason/packer.nvim'
     use {
         "ur4ltz/surround.nvim",
         config = function()
-            require"surround".setup {mappings_style = "surround"}
+            require "surround".setup({ mappings_style = "surround" })
         end
     }
-  
+
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
             'nvim-lua/plenary.nvim'
         }
     }
-  
+
     use {
         'phaazon/hop.nvim',
         as = 'hop'
     }
-  
+
     use {
         'akinsho/nvim-bufferline.lua',
         requires = 'kyazdani42/nvim-web-devicons'
     }
-   
+
     use {
         'hoob3rt/lualine.nvim',
         requires = {
@@ -59,18 +59,18 @@ use 'wbthomason/packer.nvim'
             opt = true
         }
     }
-  
+
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
-            'nvim-lua/popup.nvim', 
-            'nvim-lua/plenary.nvim' 
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim'
         }
     }
 
     use {
-        'nvim-telescope/telescope-fzf-native.nvim', 
-        run = 'make' 
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
     }
 
     use {
@@ -80,10 +80,10 @@ use 'wbthomason/packer.nvim'
     use {
         'sudormrfbin/cheatsheet.nvim',
         requires = {
-            {'nvim-telescope/telescope.nvim'},
-            {'nvim-lua/popup.nvim'},
-            {'nvim-lua/plenary.nvim'},
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim',
         }
     }
-    use_rocks {'lunajson'}
+    use_rocks { 'lunajson' }
 end)

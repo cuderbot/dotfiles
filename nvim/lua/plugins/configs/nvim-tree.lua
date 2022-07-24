@@ -1,4 +1,4 @@
-require'nvim-tree'.setup({
+require('nvim-tree').setup({
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
@@ -6,7 +6,7 @@ require'nvim-tree'.setup({
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
-  diagnostics = {
+  diagnostics         = {
     enable = false,
     icons = {
       hint = '',
@@ -15,7 +15,7 @@ require'nvim-tree'.setup({
       error = '',
     }
   },
-  actions = {
+  actions             = {
     open_file = {
       quit_on_open = true,
     },
@@ -25,11 +25,11 @@ require'nvim-tree'.setup({
     update_cwd  = false,
     ignore_list = {}
   },
-  system_open = {
+  system_open         = {
     cmd  = nil,
     args = {}
   },
-  view = {
+  view                = {
     width = 30,
     height = 30,
     side = 'left',

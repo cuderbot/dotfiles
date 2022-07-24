@@ -11,4 +11,4 @@ lspInstaller.setup({
             server_uninstalled = "✗"
         }
     }
-  })
+})

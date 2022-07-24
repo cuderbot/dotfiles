@@ -1,9 +1,9 @@
 -- include treesitter and its config
-require('nvim-treesitter.configs').setup{
-  ensure_installed = {'python', 'lua', 'typescript',
-                      'regex', 'bash', 'cmake', 'css', 'javascript',
-                      'html', 'comment', 'java', 'rust', 'go', 'markdown',
-                      'make', 'json', 'vim'},
+require('nvim-treesitter.configs').setup {
+  ensure_installed = { 'python', 'lua', 'typescript',
+    'regex', 'bash', 'cmake', 'css', 'javascript',
+    'html', 'comment', 'java', 'rust', 'go', 'markdown',
+    'make', 'json', 'vim' },
   highlight = {
     enable = true,
     disable = {},
@@ -38,4 +38,3 @@ require('nvim-treesitter.configs').setup{
     },
   },
 }
-

@@ -17,7 +17,7 @@ require('material').setup({
 	},
 	disable = {
 		borders = false,
-		eob_lines = false 
+		eob_lines = false
 	}
 })
 

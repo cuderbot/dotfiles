@@ -13,4 +13,3 @@ require('toggleterm').setup({
   close_on_exit = true,
   shell = vim.o.shell, -- change the default shell
 })
-

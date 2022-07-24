@@ -1,4 +1,4 @@
--- refer this wiki to know how to use path specifiers in vim 
+-- refer this wiki to know how to use path specifiers in vim
 -- https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
 
 local run_command_table = {
@@ -25,23 +25,23 @@ local extra = 'printf \"\\\\n\\\\033[0;33mPlease Press ENTER to continue \\\\033
 -- To run file run :Run or just press <F5>
 local function run_code()
     if (run_command_table[vim.bo.filetype]) then
-       vim.cmd("2TermExec cmd='".. run_command_table[vim.bo.filetype].."; " .. extra .. "' direction=float")
-   else
-       print("\nFileType not supported\n")
-   end
+        vim.cmd("2TermExec cmd='" .. run_command_table[vim.bo.filetype] .. "; " .. extra .. "' direction=float")
+    else
+        print("\nFileType not supported\n")
+    end
 end
 
 -- To run file run :Debug
 local function debug_code()
     if (debug_command_table[vim.bo.filetype]) then
-       vim.cmd("2TermExec cmd='".. debug_command_table[vim.bo.filetype].."; " .. extra .. "' direction=float")
-   else
-       print("\nFileType not supported\n")
-   end
+        vim.cmd("2TermExec cmd='" .. debug_command_table[vim.bo.filetype] .. "; " .. extra .. "' direction=float")
+    else
+        print("\nFileType not supported\n")
+    end
 end
 
 local function strsplit(inputstr)
-    local t={}
+    local t = {}
     for str in string.gmatch(inputstr, "([^\",\"]+)") do
         table.insert(t, str)
     end
@@ -54,7 +54,7 @@ end
 local function update_command_table(type, filetype)
     local command
 
-    if(filetype == "")then
+    if (filetype == "") then
         filetype = vim.bo.filetype
     else
         filetype = string.sub(filetype, 2, -2)
@@ -62,27 +62,27 @@ local function update_command_table(type, filetype)
 
     filetype = strsplit(filetype)[1]
 
-    if(type == 'run') then
-        if(run_command_table[filetype]) then
+    if (type == 'run') then
+        if (run_command_table[filetype]) then
             command = vim.fn.input(string.format("Update run command of filetype (%s): ", filetype),
-            run_command_table[filetype], 'file')
+                run_command_table[filetype], 'file')
         else
             command = vim.fn.input(string.format("Add new run command of filetype (%s): ", filetype))
         end
-        if(#command ~= 0) then
+        if (#command ~= 0) then
             run_command_table[filetype] = command
             print("  Updated!")
         end
     end
 
-    if(type == 'debug') then
-        if(debug_command_table[filetype]) then
+    if (type == 'debug') then
+        if (debug_command_table[filetype]) then
             command = vim.fn.input(string.format("Update debug command of filetype (%s): ", filetype),
-            debug_command_table[filetype], 'file')
+                debug_command_table[filetype], 'file')
         else
             command = vim.fn.input(string.format("Add new debug command of filetype (%s): ", filetype))
         end
-        if(#command ~= 0) then
+        if (#command ~= 0) then
             debug_command_table[filetype] = command
             print("  Updated!")
         end
