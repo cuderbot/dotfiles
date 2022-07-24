@@ -36,7 +36,9 @@ _setup_post_config() {
 }
 
 _setup_config() {
-	# Setup OMZ
+    # Setup post config stuff
+    _setup_post_config
+    # Setup OMZ
 	_setup_omz
 
 	# Setup all the alias
@@ -44,9 +46,7 @@ _setup_config() {
 
 	# Setup Environment variables
 	_setup_env
-
-	# Setup post config stuff
-    	_setup_post_config
 }
+
 
 _setup_config 
