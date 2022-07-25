@@ -8,21 +8,22 @@ return require('packer').startup(function(use)
     use 'andweeb/presence.nvim'
 
     -- functional plugins
+    -- LSP plugins (autocomplete, diagnostic)
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
     use 'williamboman/nvim-lsp-installer'
-    use 'mfussenegger/nvim-jdtls'
     use 'onsails/lspkind-nvim'
+    use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-refactor'
     use 'akinsho/nvim-toggleterm.lua'
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
     use 'norcalli/nvim-colorizer.lua'
-    use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
     use 'kdheepak/lazygit.nvim'
     use 'terrortylor/nvim-comment'
     use 'rafamadriz/friendly-snippets'
@@ -76,14 +77,6 @@ return require('packer').startup(function(use)
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
-    }
-    use {
-        'sudormrfbin/cheatsheet.nvim',
-        requires = {
-            'nvim-telescope/telescope.nvim',
-            'nvim-lua/popup.nvim',
-            'nvim-lua/plenary.nvim',
-        }
     }
     use_rocks { 'lunajson' }
 end)
