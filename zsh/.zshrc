@@ -5,7 +5,7 @@ _setup_omz() {
 	export ZSH=$HOME/.oh-my-zsh
 
 	# Current Theme
-	ZSH_THEME="bureau"
+	ZSH_THEME="lambda-mod"
 
 	# load zsh plugins
 	plugins=(aliases git fnm)
@@ -17,6 +17,7 @@ _setup_omz() {
 _setup_alias() {
 	# Change cat for batcat which is better
 	alias cat=bat
+    alias v=nvim
     alias nv=nvim
 	alias vim=nvim
 	alias vi=nvim
