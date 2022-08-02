@@ -1,6 +1,8 @@
 tap "jesseduffield/lazygit"
 
 brew "bat"
+brew "exa"
+brew "trash"
 brew "fish"
 brew "fzf"
 brew "git"
