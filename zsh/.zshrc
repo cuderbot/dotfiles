@@ -17,8 +17,9 @@ _setup_omz() {
 _setup_alias() {
 	# Change cat for batcat which is better
 	alias cat=bat
+    alias l="exa --long --header --all --icons --git"
     alias v=nvim
-    alias nv=nvim
+    alias nv="nvim ."
 	alias vim=nvim
 	alias vi=nvim
 }
