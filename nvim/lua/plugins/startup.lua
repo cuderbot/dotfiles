@@ -12,9 +12,10 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
-    use 'williamboman/nvim-lsp-installer'
     use 'onsails/lspkind-nvim'
     use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
 
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-refactor'
