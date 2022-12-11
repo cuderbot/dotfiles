@@ -27,6 +27,7 @@ _setup_alias() {
 _setup_env() {
 	# undodir for vim/nvim
 	UNDODIR_PATH="${HOME}/.config/nvim/undodir"
+	QMK_HOME="${HOME}"/workspace/qmk_firmware/
 }
 
 _setup_post_config() {
