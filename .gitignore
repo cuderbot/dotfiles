@@ -1,3 +1,5 @@
 nvim/plugin/
 nvim/undodir/
+nvim/plugin/*
 .DS_Store
+
