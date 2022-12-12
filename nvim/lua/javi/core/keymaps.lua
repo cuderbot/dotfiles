@@ -30,7 +30,7 @@ km.set("n", "<leader>sx", ":close<CR>")
 -- open new tab
 km.set("n", "<leader>to", ":tabnew<CR>")
 -- close current tab
-km.set("n", "<leader>tx", ":tabclose<CR>")
+km.set("n", "<leader>tw", ":tabclose<CR>")
 -- go to next tab
 km.set("n", "<leader>tn", ":tabn<CR>")
 -- go to previous tab
