@@ -44,6 +44,7 @@ return packer.startup(function(use)
 
   -- essentials plugins
   use("tpope/vim-surround") -- add, delete, change surroundings
+  use("numToStr/Comment.nvim") -- add comments 
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
