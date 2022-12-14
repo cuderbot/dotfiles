@@ -35,11 +35,15 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")
 
   -- colorscheme
-  use("ellisonleao/gruvbox.nvim")
+  use("navarasu/onedark.nvim")
+  use("morhetz/gruvbox")
   use("jacoborus/tender.vim")
 
   -- vs-code like icons
   use("nvim-tree/nvim-web-devicons")
+
+  -- essentials plugins
+  use("tpope/vim-surround") -- add, delete, change surroundings
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
