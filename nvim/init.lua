@@ -11,4 +11,4 @@ require('javi.plugins.telescope')
 require('javi.plugins.nvim-cmp')
 -- lsp
 require('javi.plugins.lsp.mason')
-require('javi.plugins.lspconfig')
+require('javi.plugins.lsp.lspconfig')
