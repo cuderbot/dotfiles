@@ -9,3 +9,6 @@ require('javi.plugins.nvim-tree')
 require('javi.plugins.lualine')
 require('javi.plugins.telescope')
 require('javi.plugins.nvim-cmp')
+-- lsp
+require('javi.plugins.lsp.mason')
+require('javi.pluginslsp.lspconfig')
