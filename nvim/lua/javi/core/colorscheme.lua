@@ -1,8 +1,6 @@
 -- set colorscheme with protected call
--- in case it isn't installed
-local status, _ = pcall(vim.cmd, "colorscheme tender")
+local status, _ = pcall(vim.cmd, 'colorscheme gruvbox')
 if not status then
-  print("no se encontro el colorscheme")
+  print('ERROR: no se encontro el colorscheme ;(')
   return
 end
-

@@ -1,16 +1,23 @@
-local status_telescope, telescope = pcall(require, 'telescope')
-if not status_telescope then
-  print('ERROR: no se encontro telescope')
+-- import telescope plugin safely
+local telescope_setup, telescope = pcall(require, "telescope")
+if not telescope_setup then
   return
 end
 
-local status_actions, actions = pcall(require, 'telescope.actions') 
-if not status_actions then
-  return 
+-- import telescope actions safely
+local actions_setup, actions = pcall(require, "telescope.actions")
+if not actions_setup then
+  return
 end
 
 -- configure telescope
 telescope.setup({
+  -- live preview colorscheme
+  pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
+  },
   -- configure custom mappings
   defaults = {
     mappings = {

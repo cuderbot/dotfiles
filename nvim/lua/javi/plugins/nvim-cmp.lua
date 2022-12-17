@@ -1,18 +1,17 @@
--- import nvim-cmp plugin safely
-local cmp_status, cmp = pcall(require, "cmp")
-if not cmp_status then
+-- import nvim-cmp plugin
+local status_cmp, cmp = pcall(require, 'cmp')
+if not status_cmp then
   return
 end
 
--- import luasnip plugin safely
-local luasnip_status, luasnip = pcall(require, "luasnip")
-if not luasnip_status then
+-- import luasnip plugin
+local status_luasnip, luasnip = pcall(require, 'luasnip')
+if not status_luasnip then
   return
 end
 
--- import lspkind plugin safely
-local lspkind_status, lspkind = pcall(require, "lspkind")
-if not lspkind_status then
+local status_lspkind, lspkind = pcall(require, 'lspkind')
+if not status_lspkind then
   return
 end
 
