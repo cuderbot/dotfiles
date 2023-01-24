@@ -10,6 +10,7 @@ brew "neovim", args: ["HEAD"]
 brew "tmux"
 brew "wget"
 brew "jesseduffield/lazygit/lazygit"
+brew "fnm"
 brew "spotify-tui"
 
 cask "alacritty"
