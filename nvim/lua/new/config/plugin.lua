@@ -15,6 +15,7 @@ return require("lazy").setup({
     spec = {
         { import = "new.plugins" },
     },
+    colorscheme = 'catpuccin',
     checker = { enabled = true, notify = false },
     dev = {
         path = "~/code/plugins"
@@ -23,7 +24,7 @@ return require("lazy").setup({
       -- install missing plugins on startup. This doesn't increase startup time.
       missing = true, 
       -- try to load one of these colorschemes when starting an installation during startup
-      colorscheme = { 'gruvbox' },
+      colorscheme = { 'catppuccin' },
     },
     performance = {
         rtp = {
