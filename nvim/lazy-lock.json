@@ -1,0 +1,10 @@
+{
+  "catppuccin": { "branch": "main", "commit": "491f0a58ba8901258f84de94d848811a6eaf5b98" },
+  "gruvbox": { "branch": "master", "commit": "bf2885a95efdad7bd5e4794dd0213917770d79b7" },
+  "lazy.nvim": { "branch": "main", "commit": "15fe46a728b7473d4cae368838bbc1c79c3a3f48" },
+  "lualine.nvim": { "branch": "master", "commit": "0050b308552e45f7128f399886c86afefc3eb988" },
+  "nvim-tree.lua": { "branch": "master", "commit": "215b29bfad74518442621b9d0483a621483b066b" },
+  "nvim-web-devicons": { "branch": "master", "commit": "a421d183ef37dfa13f51a5805bed2381aebf9080" },
+  "onedark.nvim": { "branch": "master", "commit": "f0a70e0993acbb348c32a52a88058cc60c160992" },
+  "tender.vim": { "branch": "master", "commit": "7746453a045eaa97dc413a7209268345f33f3243" }
+}
