@@ -3,10 +3,26 @@ return {
     -- fuzzy finder
     'nvim-telescope/telescope.nvim',
     dependencies = {
-      -- dependency for better sorting performance
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       -- lua functions that many plugins use
-      { 'nvim-lua/plenary.nvim', },
+      { 'nvim-lua/plenary.nvim' },
+      -- dependency for better sorting performance
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+      -- vs-code icons
+      { 'nvim-tree/nvim-web-devicons' },
+      -- dependency for better sorting performance
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        dependencies = {
+          "junegunn/fzf.vim",
+          dependencies = {
+            {
+              "tpope/vim-dispatch",
+              cmd = { "Make", "Dispatch" }
+            },
+          },
+        }
+      },
     },
     keys = {
       -- find files within current working directory, respects .gitignore
@@ -24,9 +40,10 @@ return {
     },
     config = function()
       -- telescope actions
-      let actions = require('telescope.actions')
+      local actions = require('telescope.actions')
       -- configure telescope
-      require('telescope').setup({
+      local telescope = require('telescope')
+      telescope.setup({
         -- configure custom mappings
         defaults = {
           mappings = {
@@ -38,7 +55,7 @@ return {
           }
         }
       })
-      telescope.load_extension("fzf")
+      telescope.load_extension('fzf')
     end
   },
 }
