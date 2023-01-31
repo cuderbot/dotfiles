@@ -1,22 +1,20 @@
 return {
   {
     'morhetz/gruvbox',
-    enable = false,
+    enabled = false,
   },
   {
     'navarasu/onedark.nvim',
-    enable = false,
+    enabled = false,
   },
   {
     'jacoborus/tender.vim',
-    enable = false,
+    enabled = false,
   },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    config = function()
-      vim.cmd('colorscheme catppuccin-mocha')
-      require('catppuccin').setup({
+    opts = {
         flavour = 'mocha',
         colour_overrides = {
           mocha = {
@@ -25,7 +23,11 @@ return {
             base = '#00000',
           },
         },
-      })
-    end
+    },
+    config = function(_, opt)
+      local catppuccin = require('catppuccin')
+      catppuccin.setup(opt)
+      catppuccin.load('mocha')
+    end,
   }
 }
