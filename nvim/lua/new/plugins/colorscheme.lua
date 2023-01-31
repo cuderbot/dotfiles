@@ -1,4 +1,4 @@
-return {
+local M = {
   {
     'morhetz/gruvbox',
     enabled = false,
@@ -31,3 +31,5 @@ return {
     end,
   }
 }
+
+return M
