@@ -2,16 +2,20 @@ return {
   {
     -- autoclose parens, brackets, quotes, etc...
     'windwp/nvim-autopairs',
-    config = function()
-      local autopairs = require('nvim-autopairs')
-      autopairs.setup({
+    opts = {
         check_ts = true, -- enable treesitter
         ts_config = {
-          lua = { 'string' }, -- don't add pairs in lua string treesitter nodes
-          javascript = { 'template_string' }, -- don't add pairs in javascript template_strings treesitter nodes 
-          java = false, -- don't check treesitter on java
+          -- don't add pairs in lua string treesitter nodes
+          lua = { 'string' }, 
+          -- don't add pairs in javascript template_strings treesitter nodes 
+          javascript = { 'template_string' },
+          -- don't check treesitter on java
+          java = false, 
         }
-      })
+    },
+    config = function(_, opts)
+      local autopairs = require('nvim-autopairs')
+      autopairs.setup(opts)
     end
   },
   {
@@ -25,9 +29,7 @@ return {
   -- syntax highlighting
   'nvim-treesitter/nvim-treesitter',
   build = ":TSUpdate",
-  config = function()
-    -- configure treesitter
-    require('nvim-treesitter.configs').setup({
+  opts = {
       -- enable syntax highlighting
       highlighting = { enable = true },
       -- enable indentation 
@@ -54,7 +56,11 @@ return {
       },
       -- auto install above language parser
       auto_install = true,
-    })
+    }
+  ,
+  config = function(_, opts)
+    -- configure treesitter
+    require('nvim-treesitter.configs').setup(opts)
   end
   }
 }
