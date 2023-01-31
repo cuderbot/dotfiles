@@ -1,13 +1,14 @@
 return {
   'nvim-tree/nvim-tree.lua',
   dependencies = {
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    -- vs-code icons 
+    "nvim-tree/nvim-web-devicons", 
   },
   keys = {
+    -- toggle file explorer
     { '<leader>et', ":NvimTreeToggle<cr>", },
+    -- focus file explorer
     { '<leader>ef', ':NvimTreeFocus<cr>', }
   },
-  config = function()
-    require('nvim-tree').setup()
-  end
+  config = true, -- this is  equal to function() require('nvim-tree').setup() end 
 }
