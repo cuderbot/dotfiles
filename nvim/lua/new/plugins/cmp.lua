@@ -3,13 +3,15 @@ local M = {
     "hrsh7th/nvim-cmp",
     event = "BufReadPre",
     dependencies = {
-        -- "hrsh7th/cmp-nvim-lsp",
+        -- source for lsp
+        "hrsh7th/cmp-nvim-lsp",
         -- source for text in buffer 
         "hrsh7th/cmp-buffer",
         -- source for vim cmdline 
         "hrsh7th/cmp-cmdline",
         -- source for file system paths
         "hrsh7th/cmp-path",
+        -- source for snippets
         "saadparwaiz1/cmp_luasnip",
         -- vs-code like icons for autocompletion
         'onsails/lspkind.nvim'
