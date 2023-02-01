@@ -23,7 +23,7 @@ M.setup = function()
 	})
 
 	---- sign column
-	local signs = require("new.utils").lsp_signs
+	local signs = require("javi.utils").lsp_signs
 
 	for type, icon in pairs(signs) do
 		local hl = "DiagnosticSign" .. type
