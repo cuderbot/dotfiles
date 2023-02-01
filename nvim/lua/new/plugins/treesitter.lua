@@ -1,31 +1,5 @@
 return {
-  {
-    -- autoclose parens, brackets, quotes, etc...
-    'windwp/nvim-autopairs',
-    opts = {
-        check_ts = true, -- enable treesitter
-        ts_config = {
-          -- don't add pairs in lua string treesitter nodes
-          lua = { 'string' }, 
-          -- don't add pairs in javascript template_strings treesitter nodes 
-          javascript = { 'template_string' },
-          -- don't check treesitter on java
-          java = false, 
-        }
-    },
-    config = function(_, opts)
-      local autopairs = require('nvim-autopairs')
-      autopairs.setup(opts)
-    end
-  },
-  {
-    -- autoclose tags
-    'windwp/nvim-ts-autotag',
-    dependencies = {
-      'nvim-treesitter'
-    }
-  },
-  {
+   {
   -- syntax highlighting
   'nvim-treesitter/nvim-treesitter',
   build = ":TSUpdate",
