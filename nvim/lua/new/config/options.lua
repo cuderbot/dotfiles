@@ -21,6 +21,7 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 opt.termguicolors = true
 opt.background = 'dark' -- colorscheme that can be light or dark will be made dark
 opt.signcolumn = 'yes' -- show sign column so that text doesn't shift
+opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 
 -- backspace
 opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position
