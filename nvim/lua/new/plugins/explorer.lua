@@ -2,7 +2,7 @@ return {
   'nvim-tree/nvim-tree.lua',
   dependencies = {
     -- vs-code icons 
-    "nvim-tree/nvim-web-devicons", 
+    "nvim-tree/nvim-web-devicons",
   },
   keys = {
     -- toggle file explorer
