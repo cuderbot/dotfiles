@@ -19,8 +19,6 @@ local M = {
         local luasnip = require("luasnip")
         local lspkind = require('lspkind')
 
-        -- local cmp_kinds = require("new.utils").cmp_kinds
-  
         local has_words_before = function()
             if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
                 return false
@@ -36,23 +34,10 @@ local M = {
                 end,
             },
             formatting = {
-                -- format = function(entry, vim_item)
-                --     if vim.tbl_contains({ "path" }, entry.source.name) then
-                --         local icon, hl_group = require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
-                --         if icon then
-                --             vim_item.kind = icon
-                --             vim_item.kind_hl_group = hl_group
-                --             return vim_item
-                --         end
-                --     end
-                --     vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
-                --
-                --     return vim_item
-                -- end,
                 format = lspkind.cmp_format({
                   maxwidth = 50,
                   ellipsis_char = "...",
-                }) 
+                })
             },
             mapping = cmp.mapping.preset.insert({
                 ["<C-p>"] = cmp.mapping.select_prev_item(),
