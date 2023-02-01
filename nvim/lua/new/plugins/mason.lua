@@ -1,27 +1,27 @@
 -- managing & installing lsp servers, linters & formatters
 local M = {
-  -- manage lsp servers, linters & formatters
-  'williamboman/mason.nvim',
-  opts = function ()
-    local mason_packages = require('new.utils').mason_packages
-
-    return {
-      ensure_installed = mason_packages,
-      automatic_installation = true,
-		  pip = {
-			  upgrade_pip = true,
-		  },
-		  ui = {
-			  border = "rounded",
-			  icons = {
-				  package_installed = "",
-				  package_pending = "‚ûú",
-				  package_uninstalled = "‚úó",
-			  },
-		  },
-	  },
-  end,
-  config = true,
+  -- managing lsp servers, linters & formatters
+	"williamboman/mason.nvim",
+	opts = {
+		pip = {
+			upgrade_pip = true,
+		},
+		ui = {
+			border = "rounded",
+		},
+	},
+	config = function(_, opts)
+		require("mason").setup(opts)
+		local utils = require("new.utils")
+		local mr = require("mason-registry")
+		local packages = utils.mason_packages
+		for _, package in ipairs(packages) do
+			local p = mr.get_package(package)
+			if not p:is_installed() then
+				p:install()
+			end
+		end
+	end,
 }
 
 return M
