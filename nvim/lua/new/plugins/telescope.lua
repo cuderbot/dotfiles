@@ -1,5 +1,4 @@
-return {
-  {
+local M = {
     -- fuzzy finder
     'nvim-telescope/telescope.nvim',
     dependencies = {
@@ -26,7 +25,7 @@ return {
     },
     keys = {
       -- find files within current working directory, respects .gitignore
-      { '<leader>ff', '<cmd>Telescope find_files<cr>' }, 
+      { '<leader>ff', '<cmd>Telescope find_files<cr>' },
       -- find string in current working directory as you type
       { '<leader>fs', '<cmd>Telescope live_grep<cr>' },
       -- find string under in cursor in current working directory
@@ -38,12 +37,11 @@ return {
       -- list available keymaps
       { '<leader>fk', '<cmd>Telescope keymaps<cr>' },
     },
-    config = function()
+    opts = function ()
       -- telescope actions
       local actions = require('telescope.actions')
-      -- configure telescope
-      local telescope = require('telescope')
-      telescope.setup({
+
+      return {
         -- configure custom mappings
         defaults = {
           mappings = {
@@ -54,8 +52,14 @@ return {
             }
           }
         }
-      })
+      }    end,
+    config = function(_, opts)
+      -- configure telescope
+      local telescope = require('telescope')
+
+      telescope.setup(opts)
       telescope.load_extension('fzf')
     end
-  },
-}
+ }
+
+return M
