@@ -12,7 +12,7 @@ local M = {
 	},
 	config = function(_, opts)
 		require("mason").setup(opts)
-		local utils = require("new.utils")
+		local utils = require("javi.utils")
 		local mr = require("mason-registry")
 		local packages = utils.mason_packages
 		for _, package in ipairs(packages) do

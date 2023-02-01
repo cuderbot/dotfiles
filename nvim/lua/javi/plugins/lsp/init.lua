@@ -12,10 +12,10 @@ local M = {
         'jayp0521/mason-null-ls.nvim'
     },
     config = function(_, opts)
-        local utils = require("new.utils")
+        local utils = require("javi.utils")
         local mason_lspconfig = require("mason-lspconfig")
         local lspconfig = require("lspconfig")
-        local lsp_utils = require("new.plugins.lsp.lsp-utils")
+        local lsp_utils = require("javi.plugins.lsp.lsp-utils")
 
         lsp_utils.setup()
 

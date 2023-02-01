@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({
     spec = {
-        { import = "new.plugins" },
+        { import = "javi.plugins" },
     },
     colorscheme = 'catpuccin',
     checker = { enabled = true, notify = false },
