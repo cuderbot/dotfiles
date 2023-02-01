@@ -8,6 +8,8 @@ local M = {
         "hrsh7th/cmp-nvim-lsp",
         -- bridges gap b/w mason & lspconfig
         "williamboman/mason-lspconfig.nvim",
+        -- bridges gap b/w mason & null-ls
+        'jayp0521/mason-null-ls.nvim'
     },
     config = function(_, opts)
         local utils = require("new.utils")
