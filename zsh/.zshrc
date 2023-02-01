@@ -22,6 +22,7 @@ _setup_alias() {
   alias nv="nvim ."
 	alias vim=nvim
 	alias vi=nvim
+  alias lg=lazygit
 }
 
 _setup_env() {
