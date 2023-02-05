@@ -16,9 +16,12 @@ km.set('n', '<leader>sv', '<C-w>v') -- split window horizontally
 km.set('n', '<leader>sh', '<C-w>s') -- split window vertically
 km.set('n', '<leader>sw', ':close<cr>') -- close current split window
 
--- tab managment --
-km.set('n', '<leader>to', ':tabnew<cr>') -- open new tab
-km.set('n', '<leader>tw', ':tabclose<cr>') -- close current tab
-km.set('n', '<leader>tn', ':tabn<cr>') -- go to next tab
-km.set('n', '<leader>tp', ':tabp<cr>') -- got to previous tab
+km.set("n", "<leader>sv", "<C-w>v") -- split window horizontally
+km.set("n", "<leader>sh", "<C-w>s") -- split window vertically
+km.set("n", "<leader>sw", ":close<cr>") -- close current split window
 
+-- buffer-tab managment --
+km.set("n", "<leader>to", ":enew<cr>") -- open new tab
+km.set("n", "<leader>tw", ":bd<cr>") -- close current tab
+km.set("n", "<leader>tn", ":bn<cr>") -- go to next tab
+km.set("n", "<leader>tp", ":bp<cr>") -- got to previous tab
