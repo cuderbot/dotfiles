@@ -45,14 +45,14 @@ _setup_env() {
 }
 
 _setup_config() {
+	# Setup Environment variables
+	_setup_env
+
   # Setup OMZ
 	_setup_omz
   
   # Setup post config stuff
   _setup_post_config
-  
-	# Setup Environment variables
-	_setup_env
 
 	# Setup all the alias
 	_setup_alias
