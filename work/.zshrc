@@ -15,6 +15,8 @@ _setup_omz() {
 }
 
 _setup_alias() {
+  # Change cd to zoxide
+  alias cd=z
 	# Change cat for batcat which is better
 	alias cat=batcat
   # Change ls for exa
