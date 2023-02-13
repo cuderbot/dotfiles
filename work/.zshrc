@@ -31,6 +31,8 @@ _setup_alias() {
 
 _setup_post_config() {
     # Setting up fnm 
+    export PATH="${HOME}/.fnm:$PATH"
+    eval "`fnm env`"
     eval "$(fnm env --use-on-cd)"
     # Setting up zoxide
     eval "$(zoxide init zsh)"
@@ -39,21 +41,21 @@ _setup_post_config() {
 _setup_env() {
 	# undodir for vim/nvim
 	UNDODIR_PATH="${HOME}/.config/nvim/undodir"
+  PATH=$PATH:"${HOME}/.local/bin"
 }
 
 _setup_config() {
-	# Setup all the alias
-	_setup_alias
-
+  # Setup OMZ
+	_setup_omz
+  
   # Setup post config stuff
   _setup_post_config
   
-  # Setup OMZ
-	_setup_omz
-
-
 	# Setup Environment variables
 	_setup_env
+
+	# Setup all the alias
+	_setup_alias
 }
 
 
