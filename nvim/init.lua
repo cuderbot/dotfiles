@@ -1,3 +1,0 @@
--- new config
-require('javi')
-
