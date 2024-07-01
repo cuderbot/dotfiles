@@ -17,18 +17,19 @@ _setup_omz() {
 _setup_alias() {
 	# Change cat for batcat which is better
 	alias cat=bat
-  alias l="exa --long --header --all --icons --git"
-  alias v=nvim
-  alias nv="nvim ."
+    alias l="exa --long --header --all --icons --git"
+    alias v=nvim
+    alias nv="nvim ."
 	alias vim=nvim
 	alias vi=nvim
-  alias lg=lazygit
+    alias lg=lazygit
 }
 
 _setup_env() {
 	# undodir for vim/nvim
 	UNDODIR_PATH="${HOME}/.config/nvim/undodir"
 	QMK_HOME="${HOME}"/workspace/qmk_firmware/
+    PATH=~/.console-ninja/.bin:$PATH
 }
 
 _setup_post_config() {
@@ -156,22 +157,44 @@ fi
 # eval "$(zoxide init zsh)"
 }
 
+_setup_nvim_switcher() {
+    alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+    alias nvim-cuder="NVIM_APPNAME=CuderNvim nvim"
+    alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+    alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+    function nvims() {
+        items=("cuder" "LazyVim" "NvChad" "AstroNvim")
+        config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+        if [[ -z $config ]]; then
+            echo "Nothing selected"
+            return 0
+        fi
+        NVIM_APPNAME=$config nvim $@
+    }
+
+    bindkey -s ^a "nvims\n"
+}
+
 _setup_config() {
-  # Setup post config stuff
-  _setup_post_config
-  # Setup OMZ
+    # Setup post config stuff
+    _setup_post_config
+
+    # Setup OMZ
 	_setup_omz
 
 	# Setup all the alias
 	_setup_alias
 
 	# Setup Environment variables
-	_setup_env
+    _setup_env
 
-  # Setup zoxide
-  _setup_zoxide
+    # Setup zoxide
+    _setup_zoxide
+
+    # Setup neovim switcher
+    _setup_nvim_switcher
 }
 
 
-_setup_config 
-
+_setup_config
