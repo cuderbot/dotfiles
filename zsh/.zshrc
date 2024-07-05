@@ -8,7 +8,7 @@ _setup_omz() {
 	ZSH_THEME="lambda-mod"
 
 	# load zsh plugins
-	plugins=(aliases git fnm)
+	plugins=(aliases git fnm yarn npm kubectl)
 
 	# Run the Oh my zsh
 	source $ZSH/oh-my-zsh.sh
@@ -23,6 +23,7 @@ _setup_alias() {
 	alias vim=nvim
 	alias vi=nvim
     alias lg=lazygit
+    alias yl="yarn local"
 }
 
 _setup_env() {
@@ -38,6 +39,9 @@ _setup_post_config() {
 
     # Setting up fnm 
     eval "$(fnm env --use-on-cd)"
+
+    # Setting up thefuck
+    eval $(thefuck --alias)
 }
 
 _setup_zoxide() {
