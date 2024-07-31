@@ -15,8 +15,8 @@ _setup_omz() {
 }
 
 _setup_alias() {
-    source "~/workspace/dotfiles/zsh/alias.sh"
-    source "~/workspace/dotfiles/zsh/alias-work.sh"
+    source ~/workspace/dotfiles/zsh/alias.zsh
+    source ~/workspace/dotfiles/zsh/alias-work.zsh
 }
 
 _setup_env() {
