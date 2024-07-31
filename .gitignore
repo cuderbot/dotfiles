@@ -1,5 +1,6 @@
 nvim/plugin/
 nvim/undodir/
 nvim/plugin/*
+zsh/alias-work.zsh
 .DS_Store
 
