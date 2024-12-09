@@ -39,6 +39,7 @@ _setup_post_config() {
 
 _setup_zoxide() {
     source ~/workspace/dotfiles/zsh/zoxide.zsh
+    export _ZO_DATA_DIR="/Users/javier/.zoxide/"
 }
 
 _setup_nvim_switcher() {
@@ -62,10 +63,20 @@ _setup_nvim_switcher() {
 
 _setup_fzf() {
     eval "$(fzf --zsh)"
+    source /Users/javier/.fzf/shell/key-bindings.zsh
+    source /Users/javier/.fzf/shell/completion.zsh
     
     # export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
-    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     # export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+}
+
+_setup_pnpm() {
+    export PNPM_HOME="/Users/javier/Library/pnpm"
+    case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
 }
 
 _setup_config() {
@@ -89,8 +100,23 @@ _setup_config() {
 
     # Setup fzf
     _setup_fzf
+
+    # Setup pnpm
+    _setup_pnpm
 }
 
 
 _setup_config
 
+
+# pnpm
+export PNPM_HOME="/Users/javier/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
