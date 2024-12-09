@@ -1,6 +1,6 @@
 # Change cat for batcat which is better
 alias cat=bat
-alias l="exa --long --header --all --icons --git"
+alias l="eza --long --header --all --icons --git"
 alias v=nvim
 alias nv="nvim ."
 alias vim=nvim
