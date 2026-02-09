@@ -16,14 +16,15 @@ _setup_omz() {
 
 _setup_alias() {
     source ~/workspace/dotfiles/zsh/alias.zsh
+    source ~/workspace/dotfiles/zsh/alias-git.zsh
     source ~/workspace/dotfiles/zsh/alias-work.zsh
+    source ~/workspace/dotfiles/zsh/alias-pnpm.zsh
 }
 
 _setup_env() {
 	# undodir for vim/nvim
 	UNDODIR_PATH="${HOME}/.config/nvim/undodir"
 	QMK_HOME="${HOME}"/workspace/qmk_firmware/
-    PATH=~/.console-ninja/.bin:$PATH
 }
 
 _setup_post_config() {
@@ -60,6 +61,24 @@ _setup_nvim_switcher() {
 
     bindkey -s ^a "nvims\n"
 }
+
+_setup_aws_cluster_switcher() {
+    function clusters() {
+        declare -rA aws_clusters=(["dev"]="nwp-desa-cluster" ["qa"]="nwm-test-cluster" ["prod"]="nwm-prod-cluster" ["trans"]="mmb-test-cluster")
+        items=("dev" "qa" "prod" "trans")
+        selected=$(printf "%s\n" "${items[@]}" | fzf --prompt="Cluster Options  " --height=~50% --layout=reverse --border --exit-0)
+        if [[ -z $selected ]]; then
+            echo "Selecciona un cluster"
+            return 0
+        fi
+        
+        echo "aws eks update-kubeconfig --name ${aws_clusters[$selected]} --region us-east-1 && kgpa"
+        eval "aws eks update-kubeconfig --name ${aws_clusters[$selected]} --region us-east-1 && kgpa"
+    }
+
+    bindkey -s ^a "clusters\n"
+}
+
 
 _setup_fzf() {
     eval "$(fzf --zsh)"
@@ -98,6 +117,9 @@ _setup_config() {
     # Setup neovim switcher
     _setup_nvim_switcher
 
+    # Setup aws eks cluster switcher
+    _setup_aws_cluster_switcher
+    
     # Setup fzf
     _setup_fzf
 
@@ -120,3 +142,5 @@ esac
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+. "$HOME/.local/bin/env"
