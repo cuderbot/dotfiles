@@ -8,4 +8,12 @@ alias vi=nvim
 alias lg=lazygit
 alias yl="yarn local"
 alias restart-zsh="source ~/.zshrc"
+alias npmln="npm run lint"
 
+
+# Sirve para volver a indexear el spotlight
+function refreshSpotlight() {
+  sudo mdutil -a -i off
+  sudo mdutil -a -i on
+  sudo mdutil -E
+}
