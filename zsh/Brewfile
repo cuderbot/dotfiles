@@ -1,21 +1,95 @@
-tap "jesseduffield/lazygit"
+tap "homebrew/cask"
+tap "homebrew/core"
 
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-brew "exa"
-brew "zoxide"
-brew "trash"
-brew "fzf"
-brew "git"
-brew "neovim", args: ["HEAD"]
-brew "tmux"
-brew "wget"
-brew "jesseduffield/lazygit/lazygit"
+# Library for manipulating PNG images
+brew "libpng"
+# Core application library for C
+brew "glib"
+# Extremely Fast Compression algorithm
+brew "lz4"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
+# Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning
+brew "cycode"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Fast and simple Node.js version manager
 brew "fnm"
-brew "spotify-tui"
-
-cask "alacritty"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# International domain name library (IDNA2008, Punycode and TR46)
+brew "libidn2"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Apache Kafka C/C++ library
+brew "librdkafka"
+# Bare libuv bindings for lua
+brew "luv"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Terminal multiplexer
+brew "tmux"
+# CLI tool that moves files or folder to the trash
+brew "trash", link: true
+# Tracks most-used directories to make cd smarter
+brew "z"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Voice and text chat for gamers
 cask "discord"
-cask "spotify"
-cask "visual-studio-code"
+cask "font-hack-nerd-font"
+# Web browser
 cask "google-chrome"
-cask "notion"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Music streaming service
+cask "spotify"
+# Open-source code editor
+cask "visual-studio-code"
+vscode "bierner.markdown-mermaid"
+vscode "bradlc.vscode-tailwindcss"
+vscode "cycode.cycode"
+vscode "dbaeumer.vscode-eslint"
+vscode "editorconfig.editorconfig"
+vscode "esbenp.prettier-vscode"
+vscode "gruntfuggly.todo-tree"
+vscode "hediet.vscode-drawio"
+vscode "mermaidchart.vscode-mermaid-chart"
+vscode "mhutchie.git-graph"
+vscode "upstash.context7-mcp"
+cargo "thokr"
+uv "posting"
+npm "@nestjs/cli"
+npm "@supercopilot/cli"
+npm "clinic"
+npm "corepack"
+npm "nx"
+npm "pipeline-mcp-server"
+npm "pnpm"
+npm "supercopilot"
