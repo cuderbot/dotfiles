@@ -1,4 +1,3 @@
-
 # setup config omz 
 _setup_omz() {
 	# Path to your oh-my-zsh installation.
@@ -33,9 +32,6 @@ _setup_post_config() {
 
     # Setting up fnm 
     eval "$(fnm env --use-on-cd)"
-
-    # Setting up thefuck
-    eval $(thefuck --alias)
 }
 
 _setup_zoxide() {
@@ -98,6 +94,10 @@ _setup_pnpm() {
     esac
 }
 
+_setup_opencode() {
+    export EDITOR="code --wait"
+}
+
 _setup_config() {
     # Setup post config stuff
     _setup_post_config
@@ -125,6 +125,8 @@ _setup_config() {
 
     # Setup pnpm
     _setup_pnpm
+
+    _setup_opencode
 }
 
 
@@ -144,3 +146,14 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 . "$HOME/.local/bin/env"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select
+
+# opencode
+export PATH=/Users/javier/.opencode/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/javier/.local/bin:$PATH"
